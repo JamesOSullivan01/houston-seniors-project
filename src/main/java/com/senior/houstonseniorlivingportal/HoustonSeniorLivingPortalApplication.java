@@ -10,6 +10,11 @@ public class HoustonSeniorLivingPortalApplication {
         SpringApplication.run(HoustonSeniorLivingPortalApplication.class, args);
         System.out.println("Hello, Houston!");
         System.out.println("test ");
+
+//     // users
+//    // blog posts
+//    //comments
+//    // advertisements
     }
 
 }
