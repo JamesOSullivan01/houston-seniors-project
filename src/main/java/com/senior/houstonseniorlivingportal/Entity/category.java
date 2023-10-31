@@ -3,8 +3,6 @@ package com.senior.houstonseniorlivingportal.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Timestamp;
-
 @Getter
 @Setter
 @Builder
@@ -12,18 +10,19 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "post_comment")
-public class post_comment {
+@Table(name = "category")
+public class category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "comment_id")
-    private Long commentId;
-    @Column(name = "post_id")
-    private Long postId;
+    @Column(name = "category_id")
+    private Long categoryId;
     @Column(name = "title")
     private String title;
-    @Column(name = "created_at")
-    private Timestamp createdAt;
+    @Column(name = "meta_titile")
+    private String metaTitile;
+    @Column(name = "slug")
+    private String slug;
     @Column(name = "content")
     private String content;
+
 }

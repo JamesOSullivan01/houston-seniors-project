@@ -33,6 +33,6 @@ public class post {
     private Timestamp createdAt;
     @Column(name = "updated_at")
     private Timestamp updatedAt;
-    @Column(name = "text")
-    private String text;
+    @Column(name = "content")
+    private String content;
 }
