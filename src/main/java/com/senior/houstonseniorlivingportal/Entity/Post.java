@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,13 +15,13 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "post")
 
-public class post {
+public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
     private Long postId;
-    @Column(name = "author_id")
-    private Long authorId;
+    @Column(name = "user_id")
+    private Long userId;
     @Column(name = "title")
     private String title;
     @Column(name = "meta_title")
@@ -35,4 +36,26 @@ public class post {
     private Timestamp updatedAt;
     @Column(name = "content")
     private String content;
+
+    @OneToMany(mappedBy = "post")
+    private List<PostComment> comments;
+
+    @ManyToMany
+    @JoinTable(
+            name = "post_tag",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private List<Tag> tags;
+
+    @ManyToMany
+    @JoinTable(
+            name = "post_category",
+            joinColumns = @JoinColumn(name = "post_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<Category> categories;
 }
+// foreign key constraint one to many
+//CRUD FOR posts
+// make a comment on post : FK to

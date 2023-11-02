@@ -10,18 +10,19 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tag")
-public class tag {
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag_id")
-    private Long tagId;
+    @Column(name = "category_id")
+    private Long categoryId;
     @Column(name = "title")
     private String title;
-    @Column(name = "metaTitle")
-    private String metaTitle;
+    @Column(name = "meta_titile")
+    private String metaTitile;
     @Column(name = "slug")
     private String slug;
-    @Column(name = "text")
-    private String text;
+    @Column(name = "content")
+    private String content;
+
 }

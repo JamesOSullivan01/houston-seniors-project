@@ -3,7 +3,6 @@ package com.senior.houstonseniorlivingportal.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 
 @Getter
@@ -14,7 +13,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Entity
 @Table(name = "user")
-public class user {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -31,9 +30,8 @@ public class user {
     private Timestamp createdAt;
     @Column(name = "upadated_at")
     private Timestamp updatedAt;
+    @Column(name = "pw")
+    private String pw;
 
-
-//    create another springboot microservices and get the list of employees from first microservies
-//    port 8809
-//    https://github.com/tutorials24x7/blog-database-mysql
+// post/create  API
 }

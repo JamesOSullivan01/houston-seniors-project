@@ -3,6 +3,9 @@ package com.senior.houstonseniorlivingportal.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -10,7 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class form {
+public class Form {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "form_id")
@@ -23,6 +26,10 @@ public class form {
     private String phoneNumber;
     @Column(name = "email")
     private String email;
+    @ElementCollection
     @Column(name = "service")
-    private String service;
+    private List<String> service = new ArrayList<>();
+
+    // Create
+
 }
