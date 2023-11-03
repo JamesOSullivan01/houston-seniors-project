@@ -21,4 +21,17 @@ public class PostController {
     public void deletePost(@PathVariable Long post_id){
         postService.deletePost(post_id);
     }
+    @PostMapping("/update-post/{post_id}")
+    public Post updateBlogPost(@PathVariable Long post_id, @RequestBody Post updatedPost) {
+        return postService.updatePost(post_id, updatedPost);
+    }
+
+    @GetMapping("/blog-post/{post_id}")
+    public Post displayPostById(@PathVariable Long post_id){
+        Post post = postService.getPostById(post_id);
+        return post;
+    }
+
+
+
 }

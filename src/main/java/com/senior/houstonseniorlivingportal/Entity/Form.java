@@ -26,10 +26,10 @@ public class Form {
     private String phoneNumber;
     @Column(name = "email")
     private String email;
-    @ElementCollection
-    @Column(name = "service")
-    private List<String> service = new ArrayList<>();
 
-    // Create
+    @Column(name = "service")
+    private String service;
+
+
 
 }
